@@ -41,7 +41,7 @@ This module offers two options to select which items to automatically save once 
 
 2) ModCTASwitch.SwitchTerokkar
 
-        Description: When the Call to Arms! event starts, switch it to another one specified in this config.
+        Description: When the DMF event starts, switch it to another one specified in this config.
         Example:     ModDMFSwitch.SwitchTerokkar = 4 -- Elwynn
         Default:    ModDMFSwitch.SwitchTerokkar = 4 
 
