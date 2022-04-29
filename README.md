@@ -39,7 +39,7 @@ This module offers two options to select which items to automatically save once 
        Description: Enables the module.
        Default:     0 - Disabled
 
-2) ModCTASwitch.SwitchEots, ModCTASwitch.SwitchSota, ModCTASwitch.SwitchIoc
+2) ModCTASwitch.SwitchTerokkar
 
         Description: When the Call to Arms! event starts, switch it to another one specified in this config.
         Example:     ModDMFSwitch.SwitchTerokkar = 4 -- Elwynn
