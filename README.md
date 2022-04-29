@@ -52,5 +52,5 @@ This module is released under the [GNU AGPL license](https://github.com/azerothc
 
 ## Authors
 
-- [Nyeriah](https://github.com/Nyeriah)
+- [Nyeriah](https://github.com/Nyeriah) (Based on mod-cta-switch = https://github.com/azerothcore/mod-cta-switch)
 - Temperrr
