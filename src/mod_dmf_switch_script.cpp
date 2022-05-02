@@ -49,7 +49,7 @@ public:
                 time_t t = time(nullptr);
                 tm* now = localtime(&t);
 
-                if (now->tm_wday == 6 /* Saturday */)
+                if (now->tm_wday == 0 /* Sunday */)
                 {
                     GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
 
