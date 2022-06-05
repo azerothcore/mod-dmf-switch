@@ -58,20 +58,22 @@ public:
                 time_t t = time(nullptr);
                 tm* now = localtime(&t);
 
-                if (now->tm_wday == 6 /* Saturday */)
-                {
-                    GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
-
-                    if (std::size_t(activeEvent) >= events.size())
+                 if (now->tm_wday == 2 /* Tuesday */)
+                    if (now ->tm_hour == 23) 
                     {
-                        LOG_ERROR("module", "[DMF-Switch]: Error, tried to stop unexisting event. ID: {}", activeEvent);
-                        return;
+                        GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
+
+                        if (std::size_t(activeEvent) >= events.size())
+                        {
+                            LOG_ERROR("module", "[CTA-Switch]: Error, tried to stop unexisting event. ID: {}", activeEvent);
+                            return;
+                        }
+
+                        GameEventData const& eventData = events[activeEvent];
+
+                        sGameEventMgr->StopEvent(activeEvent, true);
+                        LOG_INFO("module", "[CTA-Switch]: Stopping {} ({})", eventData.description, activeEvent);
                     }
-
-                    GameEventData const& eventData = events[activeEvent];
-
-                    sGameEventMgr->StopEvent(activeEvent, true);
-                    LOG_INFO("module", "[DMF-Switch]: Stopping {} ({})", eventData.description, activeEvent);
                 }
             }
         }
