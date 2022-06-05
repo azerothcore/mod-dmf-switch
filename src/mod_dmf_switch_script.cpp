@@ -25,20 +25,16 @@ public:
             return;
         }
 
-        switch (eventId)
+            switch (eventId)
         {
             case EVENT_DMF_TEROKKAR:
                 sGameEventMgr->StopEvent(eventId, true);
                 sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchTerokkar", EVENT_DMF_ELWYNN), true);
                 break;
-        }
-        {
             case EVENT_DMF_ELWYNN:
                 sGameEventMgr->StopEvent(eventId, true);
                 sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchElwynn", EVENT_DMF_ELWYNN), true);
                 break;
-        }
-        {
               case EVENT_DMF_MULGORE:
                 sGameEventMgr->StopEvent(eventId, true);
                 sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchMulgore", EVENT_DMF_MULGORE), true);
@@ -62,7 +58,7 @@ public:
                 time_t t = time(nullptr);
                 tm* now = localtime(&t);
 
-                if (now->tm_wday == 0 /* Sunday */)
+                if (now->tm_wday == 6 /* Saturday */)
                 {
                     GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
 
