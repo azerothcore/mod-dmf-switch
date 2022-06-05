@@ -25,7 +25,7 @@ public:
             return;
         }
 
-            switch (eventId)
+        switch (eventId)
         {
             case EVENT_DMF_TEROKKAR:
                 sGameEventMgr->StopEvent(eventId, true);
@@ -58,23 +58,22 @@ public:
                 time_t t = time(nullptr);
                 tm* now = localtime(&t);
 
-                 if (now->tm_wday == 2 /* Tuesday */)
+                if (now->tm_wday == 6 /* Saturday */)
                     if (now ->tm_hour == 23) 
                     {
                         GameEventMgr::GameEventDataMap const& events = sGameEventMgr->GetEventMap();
 
                         if (std::size_t(activeEvent) >= events.size())
                         {
-                            LOG_ERROR("module", "[CTA-Switch]: Error, tried to stop unexisting event. ID: {}", activeEvent);
+                            LOG_ERROR("module", "[DMF-Switch]: Error, tried to stop unexisting event. ID: {}", activeEvent);
                             return;
                         }
 
                         GameEventData const& eventData = events[activeEvent];
 
                         sGameEventMgr->StopEvent(activeEvent, true);
-                        LOG_INFO("module", "[CTA-Switch]: Stopping {} ({})", eventData.description, activeEvent);
+                        LOG_INFO("module", "[DMF-Switch]: Stopping {} ({})", eventData.description, activeEvent);
                     }
-                }
             }
         }
     }
