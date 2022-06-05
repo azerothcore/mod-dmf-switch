@@ -32,6 +32,18 @@ public:
                 sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchTerokkar", EVENT_DMF_ELWYNN), true);
                 break;
         }
+        {
+            case EVENT_DMF_ELWYNN:
+                sGameEventMgr->StopEvent(eventId, true);
+                sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchElwynn", EVENT_DMF_ELWYNN), true);
+                break;
+        }
+        {
+              case EVENT_DMF_MULGORE:
+                sGameEventMgr->StopEvent(eventId, true);
+                sGameEventMgr->StartEvent(sConfigMgr->GetOption<int>("ModDMFSwitch.SwitchMulgore", EVENT_DMF_MULGORE), true);
+                break;
+        }
     }
 
     void OnEventCheck(uint16 /*eventId*/) override
