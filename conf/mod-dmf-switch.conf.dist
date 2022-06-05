@@ -23,4 +23,7 @@ ModDMFSwitch.Enable = 1
 #
 
 ModDMFSwitch.SwitchTerokkar = 4
+ModDMFSwitch.SwitchElwynn = 4
+ModDMFSwitch.SwitchMulgore = 5
+
 
