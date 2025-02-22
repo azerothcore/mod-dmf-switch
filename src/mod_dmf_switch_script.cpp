@@ -67,7 +67,7 @@ public:
                         GameEventData const& eventData = events[activeEvent];
 
                         sGameEventMgr->StopEvent(activeEvent, true);
-                        LOG_INFO("module", "[DMF-Switch]: Stopping {} ({})", eventData.description, activeEvent);
+                        LOG_INFO("module", "[DMF-Switch]: Stopping {} ({})", eventData.Description, activeEvent);
                     }
             }
         }
